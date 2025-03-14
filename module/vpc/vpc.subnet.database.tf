@@ -7,6 +7,7 @@ resource "aws_subnet" "database" {
   availability_zone = local.AZ-northeast-2[each.value.zone]
 
   tags = {
-    name = each.value.name
+    Name = each.value.name
+    Environment = var.environment
   }
 }
