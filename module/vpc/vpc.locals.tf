@@ -8,9 +8,7 @@ locals {
   route-table-private-name = "ai-private-${var.environment}"
   route-table-public-name = "ai-public-${var.environment}"
 
-  security-group-postgres-name = "ai-postgres-${var.environment}"
   security-group-ec2_ssm-name = "ai-ssm-${var.environment}"
-  security-group-ec2_bastion_host-name = "ai-bastion_host-${var.environment}"
 
   peer-vpc-id = "vpc-00cf7bafb1b875394"
   
