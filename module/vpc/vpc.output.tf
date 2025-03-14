@@ -14,11 +14,3 @@ output "subnet-public" {
 output "security-group-ec2_ssm" {
   value = aws_security_group.ec2_ssm
 }
-
-output "security-group-ec2_bastion_host" {
-  value = aws_security_group.ec2_bastion_host
-}
-
-output "security-group-postgres" {
-  value = aws_security_group.postgres
-}

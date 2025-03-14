@@ -14,11 +14,3 @@ output "subnet-public" {
 output "security-group-ec2_ssm" {
   value = module.vpc.security-group-ec2_ssm
 }
-
-output "security-group-ec2_bastion_host" {
-  value = module.vpc.security-group-ec2_bastion_host
-}
-
-output "security-group-postgres" {
-  value = module.vpc.security-group-postgres
-}
