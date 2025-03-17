@@ -16,5 +16,5 @@ output "security_group-ec2-ssm" {
 }
 
 output "security_group-ec2-sketch" {
-  value = module.vpc.security_group-ec2-ssm
+  value = module.vpc.security_group-ec2-sketch
 }
