@@ -1,4 +1,8 @@
 locals {
+  prefix = "ai"
+}
+
+locals {
   vpc-cidr = "10.111.0.0/16"
 
   subnet-database = {

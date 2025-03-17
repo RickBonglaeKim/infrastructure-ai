@@ -2,6 +2,7 @@
 module "vpc" {
   source = "../../module/vpc"
 
+  prefix = local.prefix
   environment = var.environment
 
   vpc-cidr = local.vpc-cidr
