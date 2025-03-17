@@ -1,5 +1,5 @@
 
-data "aws_iam_policy_document" "ec2_ssm" {
+data "aws_iam_policy_document" "ec2-ssm" {
   statement {
     effect = "Allow"
     principals {
@@ -11,29 +11,29 @@ data "aws_iam_policy_document" "ec2_ssm" {
 }
 
 
-resource "aws_iam_role" "ec2_ssm" {
+resource "aws_iam_role" "ec2-ssm" {
   name = local.ec2-ssm-role-name
-  assume_role_policy = data.aws_iam_policy_document.ec2_ssm.json
+  assume_role_policy = data.aws_iam_policy_document.ec2-ssm.json
 
     tags = {
-    name = local.ec2-ssm-role-name
-    environment = var.environment
+    Name = local.ec2-ssm-role-name
+    Environment = var.environment
   }
 }
 
 
-resource "aws_iam_role_policy_attachment" "ec2_ssm" {
-  role = aws_iam_role.ec2_ssm.name
+resource "aws_iam_role_policy_attachment" "ec2-ssm" {
+  role = aws_iam_role.ec2-ssm.name
   policy_arn = local.role-policy-ssm-arn
 }
 
 
 resource "aws_iam_instance_profile" "ssm" {
   name = local.ec2-ssm-profile-name
-  role = aws_iam_role.ec2_ssm.name
+  role = aws_iam_role.ec2-ssm.name
 
   tags = {
-    name = local.ec2-ssm-profile-name
-    environment = var.environment
+    Name = local.ec2-ssm-profile-name
+    Environment = var.environment
   }
 }
