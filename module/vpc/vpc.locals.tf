@@ -1,25 +1,27 @@
 locals {
 
-  vpc-name = "ai-${var.environment}"
+  vpc-name = "${var.prefix}-${var.environment}"
   
-  internet-gateway-name = "ai-${var.environment}"
+  internet_gateway-name = "${var.prefix}-${var.environment}"
   
-  route-table-database-name = "ai-database-${var.environment}"
-  route-table-private-name = "ai-private-${var.environment}"
-  route-table-public-name = "ai-public-${var.environment}"
+  route_table-database-name = "${var.prefix}-database-${var.environment}"
+  route_table-private-name = "${var.prefix}-private-${var.environment}"
+  route_table-public-name = "${var.prefix}-public-${var.environment}"
 
-  security-group-ec2_ssm-name = "ai-ssm-${var.environment}"
+  security_group-ec2-ssm-name = "${var.prefix}-ssm-${var.environment}"
+  security_group-ec2-sketch-name = "${var.prefix}-sketch-${var.environment}"
 
-  peer-vpc-id = "vpc-00cf7bafb1b875394"
-  
-  all-cidr = "0.0.0.0/0"
-  i-screamArts-cidr = "1.212.63.210/32"
-  default-vpc-cidr = "172.31.0.0/16"
 
-  AZ-northeast-2 = {
+  cidr = {
+    all = "0.0.0.0/0"
+    i-scream_arts = "1.212.63.210/32"
+  }
+
+  az-northeast-2 = {
     a = "ap-northeast-2a",
     b = "ap-northeast-2b",
     c = "ap-northeast-2c",
     d = "ap-northeast-2d"
   }
+
 }

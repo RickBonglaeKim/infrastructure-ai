@@ -3,7 +3,7 @@ resource "aws_route_table" "private" {
   vpc_id = aws_vpc.this.id
 
   tags = {
-    Name = local.route-table-private-name
+    Name = local.route_table-private-name
     Environment = var.environment
   }
 }

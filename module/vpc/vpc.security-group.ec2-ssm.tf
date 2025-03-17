@@ -1,24 +1,24 @@
 
-resource "aws_security_group" "ec2_ssm" {
-  name = local.security-group-ec2_ssm-name
+resource "aws_security_group" "ec2-ssm" {
+  name = local.security_group-ec2-ssm-name
   vpc_id = aws_vpc.this.id
 
   tags = {
-    Name = local.security-group-ec2_ssm-name
+    Name = local.security_group-ec2-ssm-name
     Environment = var.environment
   }
 }
 
-resource "aws_vpc_security_group_ingress_rule" "allow__from_i-screamArts__to__ec2_ssm" {
-  security_group_id = aws_security_group.ec2_ssm.id
-  cidr_ipv4 = local.i-screamArts-cidr
+resource "aws_vpc_security_group_ingress_rule" "ec2-ssm-443" {
+  security_group_id = aws_security_group.ec2-ssm.id
+  cidr_ipv4 = local.cidr.i-scream_arts
   from_port = 443
   ip_protocol = "tcp"
   to_port = 443
 }
 
-resource "aws_vpc_security_group_egress_rule" "allow__from_ec2_ssm__to__all" {
-  security_group_id = aws_security_group.ec2_ssm.id
-  cidr_ipv4 = local.all-cidr
+resource "aws_vpc_security_group_egress_rule" "ec2-ssm-all" {
+  security_group_id = aws_security_group.ec2-ssm.id
+  cidr_ipv4 = local.cidr.all
   ip_protocol = "-1"
 }
