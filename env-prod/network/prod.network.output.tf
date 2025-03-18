@@ -11,8 +11,8 @@ output "subnet-public" {
   value = module.vpc.subnet-public
 }
 
-output "security_group-ec2-ssm" {
-  value = module.vpc.security_group-ec2-ssm
+output "security_group-ssm" {
+  value = module.vpc.security_group-ssm
 }
 
 output "security_group-ec2-sketch" {

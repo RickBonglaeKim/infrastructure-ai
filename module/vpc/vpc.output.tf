@@ -11,8 +11,8 @@ output "subnet-public" {
   value = aws_subnet.public
 }
 
-output "security_group-ec2-ssm" {
-  value = aws_security_group.ec2-ssm
+output "security_group-ssm" {
+  value = aws_security_group.ssm
 }
 
 output "security_group-ec2-sketch" {
