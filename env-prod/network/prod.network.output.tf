@@ -1,3 +1,6 @@
+output "vpc" {
+  value = module.vpc.this
+}
 
 output "subnet-database" {
   value = module.vpc.subnet-database
@@ -17,4 +20,8 @@ output "security_group-ssm" {
 
 output "security_group-ec2-sketch" {
   value = module.vpc.security_group-ec2-sketch
+}
+
+output "security_group-alb" {
+  value = module.vpc.security_group-alb
 }

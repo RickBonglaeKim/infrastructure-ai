@@ -12,3 +12,11 @@ module "vpc" {
   subnet-public = local.subnet-public
 
 }
+
+
+module "load_balancer" {
+  source = "../../module/load_balancer"
+
+  prefix = local.prefix
+  environment = var.environment
+}

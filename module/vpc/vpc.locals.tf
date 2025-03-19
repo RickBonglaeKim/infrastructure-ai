@@ -10,7 +10,7 @@ locals {
 
   security_group-ec2-ssm-name = "${var.prefix}-ssm-${var.environment}"
   security_group-ec2-sketch-name = "${var.prefix}-sketch-${var.environment}"
-
+  security_group-alb-name = "${var.prefix}-alb-${var.environment}"
 
   cidr = {
     all = "0.0.0.0/0"

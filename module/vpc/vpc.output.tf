@@ -1,3 +1,6 @@
+output "this" {
+  value = aws_vpc.this
+}
 
 output "subnet-database" {
   value = aws_subnet.database
@@ -17,4 +20,8 @@ output "security_group-ssm" {
 
 output "security_group-ec2-sketch" {
   value = aws_security_group.ec2-sketch
+}
+
+output "security_group-alb" {
+  value = aws_security_group.load_balancer
 }
