@@ -5,6 +5,8 @@ locals {
 locals {
   vpc-cidr = "10.111.0.0/16"
 
+  nat_gateway-allocation_id = "eipalloc-0c302e918a4a06b09"
+
   subnet-database = {
     a = {
       zone = "a"

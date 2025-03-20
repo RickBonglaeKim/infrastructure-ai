@@ -9,6 +9,10 @@ variable "vpc-cidr" {
   type = string
 }
 
+variable "nat_gateway-allocation_id" {
+  type = string
+}
+
 variable "subnet-database" {
   type = map(object({
     zone = string

@@ -8,6 +8,12 @@ resource "aws_route_table" "private" {
   }
 }
 
+resource "aws_route" "private-nat_gateway" {
+  route_table_id = aws_route_table.private.id
+  destination_cidr_block = local.cidr.all
+  nat_gateway_id = aws_nat_gateway.this.id
+}
+
 resource "aws_route_table_association" "private" {
   for_each = var.subnet-private
 

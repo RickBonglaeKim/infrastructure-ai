@@ -3,6 +3,7 @@ locals {
   vpc-name = "${var.prefix}-${var.environment}"
   
   internet_gateway-name = "${var.prefix}-${var.environment}"
+  nat_gateway-name = "${var.prefix}-${var.environment}"
   
   route_table-database-name = "${var.prefix}-database-${var.environment}"
   route_table-private-name = "${var.prefix}-private-${var.environment}"

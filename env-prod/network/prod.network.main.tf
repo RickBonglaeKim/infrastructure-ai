@@ -7,6 +7,8 @@ module "vpc" {
 
   vpc-cidr = local.vpc-cidr
 
+  nat_gateway-allocation_id = local.nat_gateway-allocation_id
+
   subnet-database = local.subnet-database
   subnet-private = local.subnet-private
   subnet-public = local.subnet-public
